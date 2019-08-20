@@ -14,13 +14,15 @@ class QuestionAnswerTableSeeder extends Seeder
     public function run()
     {
         $populateQuestions = array(
-            "question_id" => array(3, 6, 7, 8, 10, 16, 17),
+            "question_id" => array(3, 6, 7, 8, 10, 16, 17, 18, 19),
             "answers" => array(
                 ['Homme', 'Femme', 'Préfère de pas répondre'],
                 ['Occulus Rift/s', 'HTC Vive', 'Windows Mixed Reality', 'PSVR'],
                 ['SteamVR', 'Occulus store', 'Viveport', 'Playstation VR', 'Google Play', 'Windows store'],
                 ['Occulus Quest', 'Occulus Go', 'HTC Vive Pro', 'Autre', 'Aucun'],
                 ['regarder des émissions TV en direct', 'regarder des films', 'jouer en solo', 'jouer en team'],
+                ['Oui', 'Non'],
+                ['Oui', 'Non'],
                 ['Oui', 'Non'],
                 ['Oui', 'Non']
             )

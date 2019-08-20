@@ -1,8 +1,14 @@
 @extends('layouts/master')
 
 @section('content')
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
     <p>Merci de répondre à toutes les questions et de valider le formulaire en bas de page</p>
-    <form action="#" method="#">
+    <form action="{{route('userAnswer.store')}}" method="post">
+        @csrf
         @forelse ($questions as $key => $question)
 
             <h2>Question {{$question->id}}/{{count($questions)}}</h2>
@@ -10,7 +16,7 @@
 
             @switch($question->question_type)
                 @case("A")
-                    <select name="question_answer_{{$question->id}}" id="question_answer_{{$question->id}}">
+                    <select name="question_type_a[{{$question->id}}]" id="question_answer_{{$question->id}}">
                         <option value="">Choisissez une option</option>
                         @forelse ($questionsAnswers as $questionsAnswer)
                             @if($questionsAnswer->question_id === $question->id)
@@ -23,11 +29,11 @@
                     @break
 
                 @case("B")
-                    <input type="text" required="required" name="question_answer_{{$question->id}}" id="question_answer_{{$question->id}}" maxlength="255">
+                    <input type="text" required="required" name="question_type_b[{{$question->id}}]" id="question_answer_{{$question->id}}" maxlength="255">
                     @break
 
                 @case("C")
-                    <select name="question_answer_{{$question->id}}" id="question_answer_{{$question->id}}">
+                    <select name="question_type_c[{{$question->id}}]" id="question_answer_{{$question->id}}">
                         <option value="">Choisissez une option</option>
                         <option value="1">1</option>
                         <option value="2">2</option>

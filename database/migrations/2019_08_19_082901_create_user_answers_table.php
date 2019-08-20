@@ -16,9 +16,13 @@ class CreateUserAnswersTable extends Migration
         Schema::create('user_answers', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->uuid('user_id');
-            $table->integer('question_id');
+            $table->integer('question_id')->unsigned();
             $table->string('answer');
             $table->timestamps();
+        });
+
+        Schema::table('user_answers', function (Blueprint $table) {
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
         });
     }
 
@@ -30,5 +34,8 @@ class CreateUserAnswersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('user_answers');
+        Schema::table('user_answers', function (Blueprint $table) {
+            $table->dropForeign(['question_id']);
+        });
     }
 }
