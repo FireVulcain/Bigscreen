@@ -1,9 +1,9 @@
 @extends('layouts/master')
 
 @section('content')
-    @if(session()->has('message'))
+    @if(session()->has('success'))
         <div class="alert alert-success">
-            {{ session()->get('message') }}
+            {!! session()->get('success')!!}
         </div>
     @endif
     <p>Merci de répondre à toutes les questions et de valider le formulaire en bas de page</p>

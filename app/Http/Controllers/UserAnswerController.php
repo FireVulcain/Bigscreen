@@ -65,7 +65,14 @@ class UserAnswerController extends Controller
         }
         
 
-        return redirect('/')->with('message', '');
+        $final_message = "Toute l’équipe de Bigscreen vous remercie pour votre engagement. Grâce à
+        votre investissement, nous vous préparons une application toujours plus
+        facile à utiliser, seul ou en famille. <br>
+        Si vous désirez consulter vos réponse ultérieurement, vous pouvez consultez
+        cette adresse: <br> <a href='".url("/$user_id")."'/>" . url("/$user_id") . " </a>";
+
+        
+        return redirect('/')->withSuccess($final_message);
     }
 
     /**

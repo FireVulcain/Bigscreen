@@ -14,3 +14,5 @@
 Route::get('/', 'FrontController@index');
 
 Route::resource('userAnswer', 'UserAnswerController');
+
+Route::get('/{id}', '');
