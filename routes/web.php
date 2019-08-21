@@ -15,4 +15,4 @@ Route::get('/', 'FrontController@index');
 
 Route::resource('userAnswer', 'UserAnswerController');
 
-Route::get('/{id}', '');
+Route::get('/{id}', 'UserAnswerController@show')->where('id', '[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}');

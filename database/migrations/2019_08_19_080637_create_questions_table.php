@@ -18,6 +18,7 @@ class CreateQuestionsTable extends Migration
             $table->unsignedInteger('survey_id');
             $table->string('question');
             $table->enum('question_type', ['A', 'B', 'C']);
+            $table->boolean('is_email')->nullable()->default(false);
             $table->timestamps();
         });
         Schema::table('questions', function (Blueprint $table) {

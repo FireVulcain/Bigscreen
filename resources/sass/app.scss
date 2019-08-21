@@ -5,7 +5,9 @@
 @import "variables";
 
 // Reset css
-@import "_reset.scss";
+@import "_reset";
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
+
+@import "_custom";

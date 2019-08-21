@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\UserAnswer;
+use App\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -39,7 +40,8 @@ class UserAnswerController extends Controller
         $this->validate($request, [
             'question_type_a.*' => 'required',
             'question_type_b.*' => 'required|min:1|max:255',
-            'question_type_c.*' => 'required|regex:/[1-5]/'
+            'question_type_c.*' => 'required|regex:/[1-5]/',
+            'email.*' => 'required|email'
         ]);
         $user_id = Str::uuid()->toString();
 
@@ -51,6 +53,9 @@ class UserAnswerController extends Controller
             $datas[$key] = $value;
         }
         foreach ($request->question_type_c as $key => $value) {
+            $datas[$key] = $value;
+        }
+        foreach ($request->email as $key => $value) {
             $datas[$key] = $value;
         }
         ksort($datas);
@@ -71,7 +76,7 @@ class UserAnswerController extends Controller
         Si vous désirez consulter vos réponse ultérieurement, vous pouvez consultez
         cette adresse: <br> <a href='".url("/$user_id")."'/>" . url("/$user_id") . " </a>";
 
-        
+
         return redirect('/')->withSuccess($final_message);
     }
 
@@ -81,9 +86,16 @@ class UserAnswerController extends Controller
      * @param  \App\UserAnswer  $userAnswer
      * @return \Illuminate\Http\Response
      */
-    public function show(UserAnswer $userAnswer)
+    public function show(Question $question, UserAnswer $userAnswer, string $id)
     {
-        //
+        $questions = $question::all();
+        $answers = $userAnswer::all()->where('user_id', $id);
+
+        if (count($answers) === 0) {
+            return redirect('/');
+        }
+
+        return view('front.answers', ['questions' => $questions, 'answers' => $answers]);
     }
 
     /**
