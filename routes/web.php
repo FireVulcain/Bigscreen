@@ -16,3 +16,15 @@ Route::get('/', 'FrontController@index');
 Route::resource('userAnswer', 'UserAnswerController');
 
 Route::get('/{id}', 'UserAnswerController@show')->where('id', '[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}');
+
+Auth::routes();
+
+// Admin routes
+
+Route::get('administration', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('administration', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::resource('administration/accueil', 'BackController')->middleware('auth');
+Route::resource('administration/questionnaire', 'SurveyController')->middleware('auth');
+Route::resource('administration/reponses', 'AnswerController')->middleware('auth');

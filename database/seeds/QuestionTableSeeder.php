@@ -21,6 +21,7 @@ class QuestionTableSeeder extends Seeder
         for ($i = 0; $i < count($questionInfos["questions"]); $i++) {
             Question::create([
                 "survey_id" => 1,
+                "question_number" => $i + 1,
                 "question" => $questionInfos['questions'][$i],
                 "question_type" => $questionInfos['questions_type'][$i],
                 "is_email" => $questionInfos['is_email'][$i]

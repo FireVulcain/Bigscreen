@@ -3,12 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Survey;
 
 class Question extends Model
 {
-    public function survey()
-    {
-        return $this->belongsTo(Survey::class);
-    }
+    // public function answer()
+    // {
+    //     return $this->belongsToMany(Answer::class);
+    // }
+
+    // public function survey()
+    // {
+    //     return $this->belongsTo(Survey::class);
+    // }
 }

@@ -83,7 +83,9 @@ class UserAnswerController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param  \App\Question  $question
      * @param  \App\UserAnswer  $userAnswer
+     * @param  string $id  $id
      * @return \Illuminate\Http\Response
      */
     public function show(Question $question, UserAnswer $userAnswer, string $id)

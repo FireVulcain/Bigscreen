@@ -12,15 +12,15 @@
             
         @forelse ($questions as $key => $question)
             <div class="questions_list">
-                <h2>Question {{$question->id}}/{{count($questions)}}</h2>
+                <h2>Question {{$question->question_number}}/{{count($questions)}}</h2>
                 <p>{{$question->question}}</p>
 
                 @switch($question->question_type)
                     @case("A")
-                        <select name="question_type_a[{{$question->id}}]" id="question_answer_{{$question->id}}">
+                        <select name="question_type_a[{{$question->question_number}}]" id="question_answer_{{$question->question_number}}">
                             <option value="">Choisissez une option</option>
                             @forelse ($questionsAnswers as $questionsAnswer)
-                                @if($questionsAnswer->question_id === $question->id)
+                                @if($questionsAnswer->question_id === $question->question_number)
                                     <option value="{{$questionsAnswer->answers}}">{{$questionsAnswer->answers}}</option>
                                 @endif
                             @empty
@@ -31,15 +31,15 @@
 
                     @case("B")
                         @if($question->is_email)
-                            <input type="email" name="email[{{$question->id}}]" id="email_{{$question->id}}" required="required">
+                            <input type="email" name="email[{{$question->question_number}}]" id="email_{{$question->question_number}}" required="required">
                         @else
-                            <input type="text" required="required" name="question_type_b[{{$question->id}}]" id="question_answer_{{$question->id}}" maxlength="255">
+                            <input type="text" required="required" name="question_type_b[{{$question->question_number}}]" id="question_answer_{{$question->question_number}}" maxlength="255">
                         @endif
 
                         @break
 
                     @case("C")
-                        <select name="question_type_c[{{$question->id}}]" id="question_answer_{{$question->id}}">
+                        <select name="question_type_c[{{$question->question_number}}]" id="question_answer_{{$question->question_number}}">
                             <option value="">Choisissez une option</option>
                             <option value="1">1</option>
                             <option value="2">2</option>

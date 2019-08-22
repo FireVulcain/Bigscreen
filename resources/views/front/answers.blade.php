@@ -2,7 +2,7 @@
 @section('content')
     @forelse ($questions as $question)
         <div class="answers_list">
-            <h2>Question {{$question->id}}/{{count($questions)}}</h2>
+            <h2>Question {{$question->question_number}}/{{count($questions)}}</h2>
             <p>{{$question->question}}</p>
             @forelse ($answers as $answer)
                 @if($answer->question_id === $question->id)

@@ -15,6 +15,7 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id')->unsigned();
+            $table->unsignedInteger('question_number');
             $table->unsignedInteger('survey_id');
             $table->string('question');
             $table->enum('question_type', ['A', 'B', 'C']);
