@@ -33,4 +33,19 @@ class Charts extends Model
         }
         return $datas;
     }
+
+    public static function radarChart(array $id)
+    {
+        $datas = [];
+        for ($i=0; $i < count($id); $i++) {
+            $query = DB::table('user_answers')
+                ->select(DB::raw('avg(answer) as note'))
+                ->where('question_id', $id[$i])
+                ->value('note');
+
+            $datas['Q'.$id[$i]] = $query;
+        }
+
+        return $datas;
+    }
 }
