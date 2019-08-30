@@ -39,7 +39,7 @@ class Charts extends Model
         $datas = [];
         for ($i=0; $i < count($id); $i++) {
             $query = DB::table('user_answers')
-                ->select(DB::raw('avg(answer) as note'))
+                ->select(DB::raw('ROUND(AVG(answer), 2) as note'))
                 ->where('question_id', $id[$i])
                 ->value('note');
 

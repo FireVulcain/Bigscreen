@@ -19,21 +19,22 @@
                     @case("A")
                         <select name="question_type_a[{{$question->question_number}}]" id="question_answer_{{$question->question_number}}">
                             <option value="">Choisissez une option</option>
-                            @forelse ($questionsAnswers as $questionsAnswer)
+                            @foreach ($questionsAnswers as $questionsAnswer)
                                 @if($questionsAnswer->question_id === $question->question_number)
                                     <option value="{{$questionsAnswer->answers}}">{{$questionsAnswer->answers}}</option>
                                 @endif
-                            @empty
-                                <option value="empty">Pas de valeurs</option>
-                            @endforelse
+                            @endforeach
                         </select>
+                        @if($errors->has('question_type_a.'.$question->question_number)) <span class="alert-danger">{{$errors->first('question_type_a.'.$question->question_number)}}</span>@endif
                         @break
 
                     @case("B")
                         @if($question->is_email)
                             <input type="email" name="email[{{$question->question_number}}]" id="email_{{$question->question_number}}" required="required">
+                            @if($errors->has('email.'.$question->question_number)) <span class="alert-danger">{{$errors->first('email.'.$question->question_number)}}</span>@endif
                         @else
-                            <input type="text" required="required" name="question_type_b[{{$question->question_number}}]" id="question_answer_{{$question->question_number}}" maxlength="255">
+                            <input type="text" name="question_type_b[{{$question->question_number}}]" id="question_answer_{{$question->question_number}}" maxlength="255" required>
+                            @if($errors->has('question_type_b.'.$question->question_number)) <span class="alert-danger">{{$errors->first('question_type_b.'.$question->question_number)}}</span>@endif
                         @endif
 
                         @break
@@ -47,6 +48,7 @@
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
+                        @if($errors->has('question_type_c.'.$question->question_number)) <span class="alert-danger">{{$errors->first('question_type_c.'.$question->question_number)}}</span>@endif
                         @break
 
                     @default
