@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Bigscreen\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Question;
-use App\QuestionAnswer;
+use Bigscreen\Question;
+use Bigscreen\QuestionAnswer;
 
 class FrontController extends Controller
 {

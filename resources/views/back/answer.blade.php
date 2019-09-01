@@ -4,9 +4,9 @@
     @forelse ($user_answers as $user_answer)
         <table class="table table-dark user_answer">
             <thead>
-                <th>N°</th>
-                <th>Question</th>
-                <th>Réponses</th>
+                <th width="5%">N°</th>
+                <th width="65%">Question</th>
+                <th width="30%">Réponses</th>
             </thead>
             @forelse ($questions as $question)
                 <tr class="answers_list">

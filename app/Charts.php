@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace Bigscreen;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use App\QuestionAnswer;
+use Bigscreen\QuestionAnswer;
 
 class Charts extends Model
 {

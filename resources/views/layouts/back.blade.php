@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <div class="row">
-        <div class="col-md-3">
-            <img src="{{asset('img/bigscreen_logo.png')}}" alt="logo" width="100%">
-            <ul>
+    <div class="row" id="app">
+        <div class="col-md-3 admin_menu">
+            <a href="{{url('/administration/accueil')}}">
+                <img src="{{asset('img/bigscreen_logo.png')}}" alt="logo" width="100%"></a>
+            <ul class="admin_menu_list">
                 <li class="nav-item">
                     <a class="nav-link" href="{{url('/administration/accueil')}}">Accueil</a>
                 </li>
@@ -23,7 +24,7 @@
                     <a class="nav-link" href="{{route('reponses.index')}}">Réponses</a>
                 </li>
                 <li>
-                    <a class="logoutButton btn btn-outline-dark" href="#" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                    <a class="logoutButton btn" href="#" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
                         Déconnexion
                     </a>
                 </li>
@@ -32,7 +33,7 @@
                 </form>
             </ul>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 admin_content">
             @yield('content')
         </div>
     </div>

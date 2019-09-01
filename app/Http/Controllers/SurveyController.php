@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Bigscreen\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Question;
+use Bigscreen\Question;
 
 class SurveyController extends Controller
 {

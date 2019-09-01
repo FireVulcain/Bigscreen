@@ -1,16 +1,199 @@
-.questions_list *,
-.answers_list * {
+body {
+    background-color: $body-bg;
+}
+
+// Global CSS
+.logo_container {
+    padding: 20px 0;
+}
+
+// Global survey style
+p {
+    font-family: $font;
+    font-size: 1.1em;
+    font-weight: 300;
+    color: $white;
+}
+.survey_section {
+    width: 80%;
+    margin: 30px auto 50px;
+}
+#survey-form {
+    * {
+        font-family: $font;
+        font-size: 1.1em;
+        font-weight: 300;
+    }
+    .questions_list {
+        margin-bottom: 30px;
+
+        * {
+            margin-bottom: 0;
+        }
+    }
+    h2 {
+        color: $white;
+        font-size: 1.5em;
+    }
+    label {
+        display: block;
+        color: $white;
+        letter-spacing: 0.5px;
+    }
+    input,
+    select {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        outline: none;
+        border: 2px solid $grey;
+        color: $green;
+        background-color: $body-bg;
+    }
+    input {
+        padding: 0 0 5px 0;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid $white;
+
+        &:focus {
+            border-color: $green;
+        }
+
+        &:-webkit-autofill,
+        &:hover,
+        &:focus,
+        &:active {
+            transition-delay: 9999s;
+            transition-property: background-color, color;
+        }
+    }
+
+    input.alert-error,
+    select.alert-danger {
+        border-color: #c52f2f;
+    }
+
+    select {
+        height: 40px;
+        padding-left: 10px;
+        margin-top: 10px;
+        border: 2px solid $white;
+        //-webkit-appearance: none;
+        border-radius: 0;
+
+        & option {
+            padding: 5px 10px;
+            cursor: pointer;
+
+            & hover {
+                background-color: $green;
+            }
+        }
+    }
+
+    .btn {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        margin: 3% 0 0 0;
+        height: 45px;
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+        border: 3px solid $green;
+        border-radius: 0;
+        font-weight: 500;
+        font-size: 1.2em;
+        color: $green;
+        text-align: center;
+        background: none;
+        transition: color 0.25s ease;
+
+        &:after {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: $green;
+            transform-origin: left;
+            transition: width 0.5s ease;
+            z-index: -1;
+        }
+        &:hover {
+            color: $body-bg;
+
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+
+    .alert-danger {
+        background: none;
+        display: block;
+        color: #c52f2f;
+        margin-top: 10px;
+    }
+}
+
+.alert-success {
+    width: 80%;
+    margin: 15px auto 0;
+}
+
+// Global user answer
+.answers_list.card {
+    text-align: center;
+    padding: 20px 0;
+    width: 80%;
+    margin: 20px auto 10px;
+    background-color: #2a3038;
+
+    * {
+        margin-bottom: 0;
+        color: #ffffff;
+    }
+}
+
+// ADMIN
+.admin_menu,
+.admin_content {
+    padding: 0;
+}
+.admin_menu {
+    border-right: 1px solid #454d55;
+    padding: 10px 20px 0;
+}
+.admin_menu_list {
+    li {
+        text-align: center;
+
+        a {
+            color: $white;
+        }
+    }
+    .btn {
+        color: $white;
+        border-color: $white;
+        border-radius: 0;
+    }
+}
+
+//Global admin questions
+.admin_questions_list {
     margin-bottom: 0;
 }
-
-.questions_list,
-.answers_list {
-    margin-bottom: 20px;
-}
-
-.user_answer * {
-    margin: 0;
-}
+// Global admin user answer
 .user_answer {
     margin-bottom: 50px;
+
+    * {
+        margin: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
 }

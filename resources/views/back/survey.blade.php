@@ -1,7 +1,7 @@
 @extends('layouts.back')
 
 @section('content')
-    <table class="table table-dark">
+    <table class="table table-dark admin_questions_list">
         <thead>
             <tr>
                 <th>N°</th>

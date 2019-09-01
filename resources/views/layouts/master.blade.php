@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="app">
         <div class="row">
-            <div class="col-md-12">
-                <img src="{{asset('img/bigscreen_logo.png')}}" alt="logo" width="300">
+            <div class="col-md-12 text-center logo_container">
+                <a href="/">
+                    <img src="{{asset('img/bigscreen_logo.png')}}" alt="logo" width="300">
+                </a>
             </div>
         </div>
         <div class="row">
