@@ -164,6 +164,7 @@ p {
     padding: 0;
 }
 .admin_menu {
+    min-height: 100vh;
     border-right: 1px solid #454d55;
     padding: 10px 20px 0;
 }
@@ -181,7 +182,11 @@ p {
         border-radius: 0;
     }
 }
-
+//Global chart style
+.chart_container {
+    margin: 25px 0;
+    padding: 0 30px;
+}
 //Global admin questions
 .admin_questions_list {
     margin-bottom: 0;

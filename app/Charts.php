@@ -43,7 +43,7 @@ class Charts extends Model
                 ->where('question_id', $id[$i])
                 ->value('note');
 
-            $datas['Q'.$id[$i]] = $query;
+            $datas['Question n°'.$id[$i]] = $query;
         }
 
         return $datas;

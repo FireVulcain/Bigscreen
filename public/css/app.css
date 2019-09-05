@@ -10949,6 +10949,7 @@ p {
 }
 
 .admin_menu {
+  min-height: 100vh;
   border-right: 1px solid #454d55;
   padding: 10px 20px 0;
 }
@@ -10965,6 +10966,11 @@ p {
   color: #fff;
   border-color: #fff;
   border-radius: 0;
+}
+
+.chart_container {
+  margin: 25px 0;
+  padding: 0 30px;
 }
 
 .admin_questions_list {

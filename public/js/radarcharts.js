@@ -14,7 +14,7 @@ function generateRadarCharts(datas) {
     });
 
     let div = document.createElement("div");
-    div.setAttribute("class", "col-md-6");
+    div.setAttribute("class", "col-md-6 chart_container");
     let canvas = document.createElement("canvas");
     canvas.id = "radarChart";
 
@@ -24,19 +24,20 @@ function generateRadarCharts(datas) {
         .appendChild(canvas);
 
     let ctx = document.getElementById("radarChart").getContext("2d");
-    let radarChart = new Chart(ctx, {
+    new Chart(ctx, {
         type: "radar",
         data: {
             labels: datasLabel,
             datasets: [
                 {
-                    label: "Résultats qualité ",
-                    backgroundColor: "rgba(129,181,198,0.2)",
-                    borderColor: "rgba(129,181,198,1)",
-                    pointBackgroundColor: "rgba(129,181,198,1)",
+                    label: "Moyenne",
+                    fill: true,
+                    backgroundColor: "rgba(255,99,132,0.2)",
+                    borderColor: "rgba(255,99,132,1)",
+                    borderWidth: 1,
                     pointBorderColor: "#fff",
-                    pointHoverBackgroundColor: "#fff",
-                    pointHoverBorderColor: "rgba(129,181,198,1)",
+                    pointBackgroundColor: "rgba(255,99,132,1)",
+                    pointBorderColor: "#fff",
                     data: datasValue
                 }
             ]
@@ -47,7 +48,18 @@ function generateRadarCharts(datas) {
                 ticks: {
                     beginAtZero: true,
                     max: 5,
-                    stepSize: 1
+                    stepSize: 1,
+                    backdropColor: "#37404a",
+                    fontColor: "white"
+                },
+                pointLabels: {
+                    fontColor: "#FFF"
+                }
+            },
+            legend: {
+                labels: {
+                    fontColor: "white",
+                    fontSize: 14
                 }
             }
         }
