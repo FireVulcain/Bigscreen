@@ -17,7 +17,7 @@ Route::resource('userAnswer', 'UserAnswerController');
 
 Route::get('/{id}', 'UserAnswerController@show')->where('id', '[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}');
 
-Auth::routes();
+Auth::routes(['register' => false, 'reset'=> false]);
 
 // Admin routes
 

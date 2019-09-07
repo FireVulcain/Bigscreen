@@ -154,11 +154,43 @@ p {
 
     * {
         margin-bottom: 0;
-        color: #ffffff;
+        color: $white;
     }
 }
 
 // ADMIN
+.admin_layouts .navbar {
+    display: none;
+}
+.admin_layouts main {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.admin_layouts main .card {
+    background: #2a3038;
+    color: $white;
+}
+.admin_layouts main .card form .form-control:focus {
+    border-color: $green;
+    box-shadow: 0 0 0 1px $green;
+}
+.admin_layouts main .card form button,
+.admin_layouts main .card form button:active,
+.admin_layouts main .card form button:hover,
+.admin_layouts main .card form button:focus {
+    background: transparent !important;
+    border-color: $green !important;
+    outline: 0;
+    box-shadow: none !important;
+}
+.admin_layouts main .card form a,
+.admin_layouts main .card form a:hover {
+    color: $green;
+    text-decoration: none;
+}
 .admin_menu,
 .admin_content {
     padding: 0;
