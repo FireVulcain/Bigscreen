@@ -4,9 +4,9 @@
     <table class="table table-dark admin_questions_list">
         <thead>
             <tr>
-                <th>N°</th>
-                <th>Question</th>
-                <th>Type</th>
+                <th width="5%">N°</th>
+                <th width="85%">Question</th>
+                <th width="10%">Type</th>
             </tr>
         </thead>
         @forelse ($questions as $question)
@@ -22,7 +22,6 @@
                 </td>
             </tr>
         @empty
-            
         @endforelse
     </table>
     

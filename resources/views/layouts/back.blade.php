@@ -11,9 +11,11 @@
 <body>
     <div class="row" id="app">
         <div class="col-md-3 admin_menu">
-            <a href="{{url('/administration/accueil')}}">
-                <img src="{{asset('img/bigscreen_logo.png')}}" alt="logo" width="100%"></a>
-            <ul class="admin_menu_list">
+            <a class="nav-link" href="{{url('/administration/accueil')}}">
+                <img src="{{asset('img/bigscreen_logo.png')}}" alt="logo" width="100%">
+            </a>
+            <a href="#" class="header__icon" id="header__icon"></a>
+            <ul class="admin_menu_list navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{{url('/administration/accueil')}}">Accueil</a>
                 </li>
@@ -40,6 +42,7 @@
 
 @section('scripts')
     <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{asset('js/menu.js')}}"></script>
 @show
 </body>
 </html>

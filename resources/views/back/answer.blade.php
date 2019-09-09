@@ -25,8 +25,4 @@
     @empty
         <p>Pas de réponses</p>
     @endforelse
-
-
-
-    
 @endsection

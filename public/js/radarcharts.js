@@ -15,6 +15,7 @@ function generateRadarCharts(datas) {
 
     let div = document.createElement("div");
     div.setAttribute("class", "col-md-6 chart_container");
+
     let canvas = document.createElement("canvas");
     canvas.id = "radarChart";
 
