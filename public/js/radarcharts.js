@@ -13,15 +13,15 @@ function generateRadarCharts(datas) {
         datasValue.push(value);
     });
 
-    let div = document.createElement("div");
-    div.setAttribute("class", "col-md-6 chart_container");
+    let chartContainer = document.createElement("div");
+    chartContainer.setAttribute("class", "col-md-6 chart_container");
 
     let canvas = document.createElement("canvas");
     canvas.id = "radarChart";
 
     document
         .getElementById("chartsElements")
-        .appendChild(div)
+        .appendChild(chartContainer)
         .appendChild(canvas);
 
     let ctx = document.getElementById("radarChart").getContext("2d");
@@ -44,6 +44,7 @@ function generateRadarCharts(datas) {
             ]
         },
         options: {
+            responsive: true,
             maintainAspectRatio: true,
             scale: {
                 ticks: {

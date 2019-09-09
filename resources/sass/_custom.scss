@@ -219,6 +219,12 @@ p {
     margin: 25px 0;
     padding: 0 30px;
 }
+@media screen and (max-width: 1100px) {
+    .chart_container {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+}
 //Global admin questions
 .admin_questions_list {
     margin-bottom: 0;
@@ -240,18 +246,19 @@ p {
     }
 }
 @media screen and (max-width: 767px) {
-    .admin_menu,
     .admin_content {
         padding: 0 15px;
     }
     .admin_menu {
         min-height: 0;
+        padding: 0;
     }
     .admin_menu_list {
         flex-direction: row;
         align-items: center;
         justify-content: space-evenly;
-        padding: 0 0 20px;
+        padding: 0 0 10px;
+        border-bottom: 1px solid #2a3038;
     }
     .admin_menu_list li {
         padding: 0;

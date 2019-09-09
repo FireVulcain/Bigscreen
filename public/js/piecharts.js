@@ -26,14 +26,15 @@ function generatePieCharts(datas) {
             datasValue.push(value);
         });
 
-        let div = document.createElement("div");
-        div.setAttribute("class", "col-md-6 chart_container");
+        let chartContainer = document.createElement("div");
+        chartContainer.setAttribute("class", "col-md-6 chart_container");
+
         let canvas = document.createElement("canvas");
         canvas.id = "data_" + i;
 
         document
             .getElementById("chartsElements")
-            .appendChild(div)
+            .appendChild(chartContainer)
             .appendChild(canvas);
 
         let ctx = document.getElementById("data_" + i).getContext("2d");
@@ -49,6 +50,7 @@ function generatePieCharts(datas) {
                 labels: datasLabel
             },
             options: {
+                responsive: true,
                 elements: {
                     arc: {
                         borderWidth: 1,

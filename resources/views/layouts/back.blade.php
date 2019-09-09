@@ -11,7 +11,7 @@
 <body>
     <div class="row" id="app">
         <div class="col-md-3 admin_menu">
-            <a class="nav-link" href="{{url('/administration/accueil')}}">
+            <a class="nav-link" href="{{url('/')}}">
                 <img src="{{asset('img/bigscreen_logo.png')}}" alt="logo" width="100%">
             </a>
             <a href="#" class="header__icon" id="header__icon"></a>
@@ -25,7 +25,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('reponses.index')}}">Réponses</a>
                 </li>
-                <li>
+                <li class="nav-item">
                     <a class="logoutButton btn" href="#" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
                         Déconnexion
                     </a>
