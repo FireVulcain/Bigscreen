@@ -91,13 +91,24 @@ class UserAnswerController extends Controller
     public function show(Question $question, UserAnswer $userAnswer, string $id)
     {
         $questions = $question::all();
-        $answers = $userAnswer::all()->where('user_id', $id);
+        
+        $dateTime = $questions->pluck('created_at')->first();
+        $createDate = new \DateTime($dateTime);
+        $formatDate = $createDate->format('d.m.Y');
+        $formatTime = $createDate->format('H:i:s');
 
+
+        $answers = $userAnswer::all()->where('user_id', $id);
         if (count($answers) === 0) {
             return redirect('/');
         }
 
-        return view('front.answers', ['questions' => $questions, 'answers' => $answers]);
+        return view('front.answers', [
+            'questions' => $questions,
+            'answers' => $answers,
+            'formatDate' => $formatDate,
+            'formatTime' => $formatTime
+        ]);
     }
 
     /**

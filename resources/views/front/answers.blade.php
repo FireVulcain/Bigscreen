@@ -1,5 +1,11 @@
 @extends('layouts/master')
 @section('content')
+    <div class="answer_time">
+        <p>
+            Vous trouverez ci-dessous les réponses que vous avez apportées à <br>
+            notre sondage le {{$formatDate}} à {{$formatTime}} 
+        </p>
+    </div>
     @forelse ($questions as $question)
         <div class="answers_list card">
             <h2>Question {{$question->question_number}}/{{count($questions)}}</h2>

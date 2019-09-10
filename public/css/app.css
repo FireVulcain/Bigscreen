@@ -10930,11 +10930,15 @@ p {
   margin: 15px auto 0;
 }
 
+.answers_list.card,
+.answer_time {
+  width: 80%;
+  margin: 20px auto 10px;
+}
+
 .answers_list.card {
   text-align: center;
   padding: 20px 0;
-  width: 80%;
-  margin: 20px auto 10px;
   background-color: #2a3038;
 }
 
