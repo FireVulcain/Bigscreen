@@ -3,7 +3,7 @@
     <div class="answer_time">
         <p>
             Vous trouverez ci-dessous les réponses que vous avez apportées à <br>
-            notre sondage le {{$formatDate}} à {{$formatTime}} 
+            notre sondage le {{$formatDate}}
         </p>
     </div>
     @forelse ($questions as $question)

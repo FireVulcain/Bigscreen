@@ -58,7 +58,6 @@ class UserAnswerController extends Controller
         foreach ($request->email as $key => $value) {
             $datas[$key] = $value;
         }
-        ksort($datas);
         
         foreach ($datas as $key => $value) {
             UserAnswer::create([
@@ -91,14 +90,14 @@ class UserAnswerController extends Controller
     public function show(Question $question, UserAnswer $userAnswer, string $id)
     {
         $questions = $question::all();
-        
-        $dateTime = $questions->pluck('created_at')->first();
-        $createDate = new \DateTime($dateTime);
-        $formatDate = $createDate->format('d.m.Y');
-        $formatTime = $createDate->format('H:i:s');
-
 
         $answers = $userAnswer::all()->where('user_id', $id);
+
+        $dateTime = $answers->pluck('created_at')->first();
+        $createDate = new \DateTime($dateTime);
+        $formatDate = $createDate->format('d.m.Y à H:i:s');
+
+
         if (count($answers) === 0) {
             return redirect('/');
         }
@@ -106,8 +105,7 @@ class UserAnswerController extends Controller
         return view('front.answers', [
             'questions' => $questions,
             'answers' => $answers,
-            'formatDate' => $formatDate,
-            'formatTime' => $formatTime
+            'formatDate' => $formatDate
         ]);
     }
 
