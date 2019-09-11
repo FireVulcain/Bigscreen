@@ -7,7 +7,7 @@
         </p>
     </div>
     @forelse ($questions as $question)
-        <div class="answers_list card">
+        <section class="answers_list card">
             <h2>Question {{$question->question_number}}/{{count($questions)}}</h2>
             <p>{{$question->question}}</p>
             @forelse ($answers as $answer)
@@ -17,7 +17,7 @@
             @empty
                 <p>Pas de réponses</p>
             @endforelse
-        </div>
+        </section>
     @empty
         <p>Pas de questions</p>
     @endforelse

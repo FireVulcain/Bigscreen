@@ -1,7 +1,7 @@
 @extends('layouts.back')
 
 @section('content')
-    <div id="chartsElements" class="row"></div>
+    <section id="chartsElements" class="row"></section>
 @endsection
 
 

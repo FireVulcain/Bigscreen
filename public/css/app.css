@@ -10869,6 +10869,10 @@ p {
   border-radius: 0;
 }
 
+#survey-form select:focus {
+  border-color: #85ffc7;
+}
+
 #survey-form select option {
   padding: 5px 10px;
   cursor: pointer;

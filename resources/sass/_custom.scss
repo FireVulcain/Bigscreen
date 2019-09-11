@@ -79,8 +79,11 @@ p {
         padding-left: 10px;
         margin-top: 10px;
         border: 2px solid $white;
-        //-webkit-appearance: none;
         border-radius: 0;
+
+        &:focus {
+            border-color: $green;
+        }
 
         & option {
             padding: 5px 10px;

@@ -10,18 +10,18 @@
 </head>
 <body>
     <div class="container" id="app">
-        <div class="row">
+        <header class="row">
             <div class="col-md-12 text-center logo_container">
                 <a href="/">
                     <img src="{{asset('img/bigscreen_logo.png')}}" alt="logo" width="400">
                 </a>
             </div>
-        </div>
-        <div class="row">
+        </header>
+        <main class="row">
             <div class="col-md-12">
                 @yield('content')
             </div>
-        </div>
+        </main>
     </div>
 
 <script src="{{asset('js/app.js')}}"></script>

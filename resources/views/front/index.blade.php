@@ -6,7 +6,7 @@
             {!! session()->get('success') !!}
         </div>
     @endif
-    <div class="survey_section">
+    <section class="survey_section">
             <p>Merci de répondre à toutes les questions et de valider le formulaire en bas de page</p>
             <form action="{{route('userAnswer.store')}}" method="post" id="survey-form">
                 @csrf
@@ -51,9 +51,7 @@
                                 </select>
                                 @if($errors->has('question_type_c.'.$question->question_number)) <span class="alert-danger">{{$errors->first('question_type_c.'.$question->question_number)}}</span>@endif
                                 @break
-        
                             @default
-                                
                         @endswitch
                     </div>
                 @empty
@@ -62,6 +60,6 @@
                 
                 <button type="submit" class="btn" value="Finaliser">Finaliser</button>
             </form>
-    </div>
+    </section>
     
 @endsection
