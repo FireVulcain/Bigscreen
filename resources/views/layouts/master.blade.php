@@ -24,6 +24,9 @@
         </main>
     </div>
 
-<script src="{{asset('js/app.js')}}"></script>
+@section('scripts')
+    <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{asset('js/onChangeForm.js')}}"></script>
+@show
 </body>
 </html>
