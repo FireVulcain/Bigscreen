@@ -1,10 +1,10 @@
 <?php
 
-namespace Bigscreen\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Bigscreen\Charts;
+use App\Charts;
 
 class BackController extends Controller
 {

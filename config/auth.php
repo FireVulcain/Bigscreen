@@ -68,7 +68,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => Bigscreen\User::class,
+            'model' => App\User::class,
         ],
 
         // 'users' => [

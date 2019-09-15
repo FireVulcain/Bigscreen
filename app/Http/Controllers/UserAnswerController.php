@@ -1,9 +1,9 @@
 <?php
 
-namespace Bigscreen\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Bigscreen\UserAnswer;
-use Bigscreen\Question;
+use App\UserAnswer;
+use App\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -82,8 +82,8 @@ class UserAnswerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \Bigscreen\Question  $question
-     * @param  \Bigscreen\UserAnswer  $userAnswer
+     * @param  \App\Question  $question
+     * @param  \App\UserAnswer  $userAnswer
      * @param  string $id  $id
      * @return \Illuminate\Http\Response
      */
@@ -113,7 +113,7 @@ class UserAnswerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \Bigscreen\UserAnswer  $userAnswer
+     * @param  \App\UserAnswer  $userAnswer
      * @return \Illuminate\Http\Response
      */
     public function edit(UserAnswer $userAnswer)
@@ -125,7 +125,7 @@ class UserAnswerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Bigscreen\UserAnswer  $userAnswer
+     * @param  \App\UserAnswer  $userAnswer
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, UserAnswer $userAnswer)
@@ -136,7 +136,7 @@ class UserAnswerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Bigscreen\UserAnswer  $userAnswer
+     * @param  \App\UserAnswer  $userAnswer
      * @return \Illuminate\Http\Response
      */
     public function destroy(UserAnswer $userAnswer)

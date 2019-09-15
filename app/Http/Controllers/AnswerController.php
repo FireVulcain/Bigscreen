@@ -1,10 +1,10 @@
 <?php
 
-namespace Bigscreen\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Bigscreen\UserAnswer;
-use Bigscreen\Question;
+use App\UserAnswer;
+use App\Question;
 
 class AnswerController extends Controller
 {
