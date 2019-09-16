@@ -58,6 +58,7 @@ class UserAnswerController extends Controller
         foreach ($request->email as $key => $value) {
             $datas[$key] = $value;
         }
+        ksort($datas);
         
         foreach ($datas as $key => $value) {
             UserAnswer::create([
