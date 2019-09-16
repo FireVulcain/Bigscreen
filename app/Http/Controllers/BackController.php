@@ -21,7 +21,7 @@ class BackController extends Controller
         
         $datas_radar = Charts::radarChart([11, 12, 13, 14, 15]);
         
-        return view('back.home', [
+        return view('back.index', [
             'datas_q6' => $datas_q6,
             'datas_q7' => $datas_q7,
             'datas_q8' => $datas_q8,
