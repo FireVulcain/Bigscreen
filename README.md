@@ -14,13 +14,19 @@ run `npm install`
 
 ## 4: Create a copy of your .env file
 
+You could run `cp .env.example .env`
+
 ## 5: Generate an app encryption key
 
 run `php artisan key:generate`
 
 ## 6: Create an empty database for our application
 
-## 7: In the .env file, add database information to allow Laravel to connect to the database
+Go to phpmyadmin and create an empty database
+
+## 7: Update de .env file
+
+In the .env file, add database information to allow Laravel to connect to the database
 
 ## 8: Migrate the database
 
