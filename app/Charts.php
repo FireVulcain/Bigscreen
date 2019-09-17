@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use App\QuestionAnswer;
+use App\Question;
 
 class Charts extends Model
 {
@@ -33,7 +34,10 @@ class Charts extends Model
                     ->pluck('answers')
                     ->toArray();
 
+        $question = Question::all()->where('id', $id)->pluck('question');
+
         $datas = [];
+        $datas['question'] = $question;
         
 
         /**
@@ -43,7 +47,7 @@ class Charts extends Model
          * Ici 6 personnes on répondu 'HTC vive' à la question
          */
         foreach ($query as $key => $value) {
-            $datas[$value->answer] = $value->nb_vote;
+            $datas['value'][$value->answer] = $value->nb_vote;
         }
 
 
@@ -54,8 +58,8 @@ class Charts extends Model
          * $datas['Windows Store'] = 0
          */
         foreach ($labels as $key => $value) {
-            if (!array_key_exists($value, $datas)) {
-                $datas[$value] = 0;
+            if (!array_key_exists($value, $datas['value'])) {
+                $datas['value'][$value] = 0;
             }
         }
 

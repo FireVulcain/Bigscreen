@@ -61,7 +61,7 @@ function generateRadarCharts(datas) {
             legend: {
                 labels: {
                     fontColor: "white",
-                    fontSize: 14
+                    fontSize: 18
                 }
             }
         }

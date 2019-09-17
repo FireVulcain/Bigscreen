@@ -19,15 +19,17 @@ function generatePieCharts(datas) {
     for (let i = 0; i < datas.length; i++) {
         let datasLabel = [];
         let datasValue = [];
-        Object.keys(datas[i]).map((key) => {
+        Object.keys(datas[i]["value"]).map((key) => {
             datasLabel.push(key);
         });
-        Object.values(datas[i]).map((value) => {
+        Object.values(datas[i]["value"]).map((value) => {
             datasValue.push(value);
         });
 
         let chartContainer = document.createElement("div");
         chartContainer.setAttribute("class", "col-md-6 chart_container");
+
+        chartContainer.innerHTML += `<h2 class="stat_title_question">${datas[i]["question"]}</h2>`;
 
         let canvas = document.createElement("canvas");
         canvas.id = "data_" + i;
