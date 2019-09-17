@@ -41,8 +41,9 @@ class UserAnswerController extends Controller
             'question_type_a.*' => 'required',
             'question_type_b.*' => 'required|min:1|max:255',
             'question_type_c.*' => 'required|regex:/[1-5]/',
-            'email.*' => 'required|email'
+            'email.*' => 'required|email:filter|regex:/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}/'
         ]);
+
         $user_id = Str::uuid()->toString();
 
         $datas = [];
