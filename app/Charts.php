@@ -46,9 +46,14 @@ class Charts extends Model
          * Ex : $datas['HTC Vive'] = 6
          * Ici 6 personnes on répondu 'HTC vive' à la question
          */
-        foreach ($query as $key => $value) {
-            $datas['value'][$value->answer] = $value->nb_vote;
+        if (count($query) !== 0) {
+            foreach ($query as $key => $value) {
+                $datas['value'][$value->answer] = $value->nb_vote;
+            }
+        } else {
+            $datas['value'] = [];
         }
+        
 
 
         /**
